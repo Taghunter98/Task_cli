@@ -1,5 +1,5 @@
 # Task CLI Application
-***
+
 A simple command-line interface (CLI) application for managing tasks. This application allows you to create, update, delete, and display tasks that are stored in a JSON file. The task manager also provides functionality to filter tasks by status and view details such as creation or update timestamps.
 
 ## Features
