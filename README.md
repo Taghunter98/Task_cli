@@ -1,5 +1,5 @@
 # Task CLI Application
-
+***
 A simple command-line interface (CLI) application for managing tasks. This application allows you to create, update, delete, and display tasks that are stored in a JSON file. The task manager also provides functionality to filter tasks by status and view details such as creation or update timestamps.
 
 ## Features
@@ -13,72 +13,88 @@ A simple command-line interface (CLI) application for managing tasks. This appli
 ## Commands
 The application recognizes the following commands:
 
-| Command                   | Arguments                | Description                                   |
-|---------------------------|--------------------------|-----------------------------------------------|
-| **add** `<description>`   | One argument             | Creates a new task with the given description. |
-| **display**               | None or `<status>`       | Displays all tasks or filters by status.       |
-| **delete** `<id>`         | One argument (task ID)   | Deletes the task specified by its ID.          |
-| **update** `<id>` `<status>` | Two arguments (task ID, status) | Updates the status of the given task.     |
-| **update_name** `<id>` `<description>` | Two arguments (task ID, new description) | Updates the task's description. |
-| **status** `<id>`         | One argument (task ID)   | Displays the status of the task with the given ID. |
-| **created** `<id>`        | One argument (task ID)   | Shows the creation date of the task.           |
-| **updated** `<id>`        | One argument (task ID)   | Shows the last updated date of the task.       |
-| **help**                  | None                    | Displays all available commands and their usage. |
-| **quit**                  | None                    | Exits the application.                         |
+| Command                                | Arguments                                | Description                                        |
+|----------------------------------------|------------------------------------------|----------------------------------------------------|
+| **add** `<description>`                | One argument                             | Creates a new task with the given description.     |
+| **display**                            | None or `<status>`                       | Displays all tasks or filters by status.           |
+| **delete** `<id>`                      | One argument (task ID)                   | Deletes the task specified by its ID.              |
+| **update** `<id>` `<status>`           | Two arguments (task ID, status)          | Updates the status of the given task.              |
+| **update_name** `<id>` `<description>` | Two arguments (task ID, new description) | Updates the task's description.                    |
+| **status** `<id>`                      | One argument (task ID)                   | Displays the status of the task with the given ID. |
+| **created** `<id>`                     | One argument (task ID)                   | Shows the creation date of the task.               |
+| **updated** `<id>`                     | One argument (task ID)                   | Shows the last updated date of the task.           |
+| **help**                               | None                                     | Displays all available commands and their usage.   |
+| **quit**                               | None                                     | Exits the application.                             |
 
 ## Getting Started
 
 ### Prerequisites
 - Java 17 or higher
-- Maven (optional, if you wish to build the project)
 
 ### Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Taghunter98/Task-cli.git
-   cd task-cli
+   git clone https://github.com/Taghunter98/Task_cli.git
+   cd Task-cli
    ```
-2. Compile the application:
+2. Run the application:
    ```bash
-   javac -cp gson-2.10.jar Task_cli.java Task.java
-   ```
-3. Run the application:
-   ```bash
-   java -cp .:gson-2.10.jar Task_cli
+   ./gradle run
    ```
 
 ### Example Usage
 1. Add a task:
    ```bash
-   java -cp .:gson-2.10.jar Task_cli add "Buy groceries"
+   ./gradle run --args="add 'Write project documentation'"
    ```
    Output:
    ```
-   Task created: Buy groceries, 1
+   Task created: Write project documentation  ID:1
    ```
 
 2. Display all tasks:
    ```bash
-   java -cp .:gson-2.10.jar Task_cli display
+   ./gradle run --args="display"
    ```
 
-3. Update a task's status:
+3. Delete a task:
    ```bash
-   java -cp .:gson-2.10.jar Task_cli update 1 2
+   ./gradle run --args="delete 1"
+   ```
+
+4. Update a task's status:
+   ```bash
+   ./gradle run --args="update 1 2"
    ```
    Status levels:
    - 1: `todo`
    - 2: `in-progress`
    - 3: `done`
 
-4. View task creation date:
+
+5. Display status:
    ```bash
-   java -cp .:gson-2.10.jar Task_cli created 1
+   ./gradle run --args="display in-progress"
    ```
 
-5. Get help:
+6. Display task status:
    ```bash
-   java -cp .:gson-2.10.jar Task_cli help
+   ./gradle run --args="status 1"
+   ```
+
+7. View task creation date:
+   ```bash
+   ./gradle run --args="created 1"
+   ```
+
+8. View last update date:
+   ```bash
+   ./gradle run --args="updated 1"
+   ```
+
+9. Get help:
+   ```bash
+   ./gradle run --args="help"
    ```
 
 ### Data Storage
@@ -106,10 +122,9 @@ A separate file, `id.txt`, is used to generate unique task IDs.
 Contributions, issues, and feature requests are welcome! Feel free to fork the repository and create a pull request.
 
 ## Roadmap
-- [ ] Add unit tests to ensure application robustness.
-- [ ] Integrate better error handling for invalid input or missing files.
+- [ ] Add unit tests.
+- [ ] Integrate better error handling.
 - [ ] Extend task filtering (e.g., sort by creation date or status).
-- [ ] Refactor to support multiple data storage formats (e.g., SQLite).
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.

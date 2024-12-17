@@ -116,7 +116,7 @@ public class Task_cli {
         List<Task> tasks = readTasks();
         if (!tasks.isEmpty()) {
             int id = tasks.get(tasks.size() - 1).getId();
-            System.out.println("Task created: " + description + ", " + id);
+            System.out.println("Task created: " + description + "  ID:" + id);
         } else {
             System.out.println("Failed to retrieve task ID after creation.");
         }
