@@ -39,13 +39,13 @@ The application recognizes the following commands:
    ```
 2. Run the application:
    ```bash
-   ./gradle run
+   ./gradlew run
    ```
 
 ### Example Usage
 1. Add a task:
    ```bash
-   ./gradle run --args="add 'Write project documentation'"
+   ./gradlew run --args="add 'Write project documentation'"
    ```
    Output:
    ```
@@ -54,17 +54,17 @@ The application recognizes the following commands:
 
 2. Display all tasks:
    ```bash
-   ./gradle run --args="display"
+   ./gradlew run --args="display"
    ```
 
 3. Delete a task:
    ```bash
-   ./gradle run --args="delete 1"
+   ./gradlew run --args="delete 1"
    ```
 
 4. Update a task's status:
    ```bash
-   ./gradle run --args="update 1 2"
+   ./gradlew run --args="update 1 2"
    ```
    Status levels:
    - 1: `todo`
@@ -74,27 +74,27 @@ The application recognizes the following commands:
 
 5. Display status:
    ```bash
-   ./gradle run --args="display in-progress"
+   ./gradlew run --args="display in-progress"
    ```
 
 6. Display task status:
    ```bash
-   ./gradle run --args="status 1"
+   ./gradlew run --args="status 1"
    ```
 
 7. View task creation date:
    ```bash
-   ./gradle run --args="created 1"
+   ./gradlew run --args="created 1"
    ```
 
 8. View last update date:
    ```bash
-   ./gradle run --args="updated 1"
+   ./gradlew run --args="updated 1"
    ```
 
 9. Get help:
    ```bash
-   ./gradle run --args="help"
+   ./gradlew run --args="help"
    ```
 
 ### Data Storage
